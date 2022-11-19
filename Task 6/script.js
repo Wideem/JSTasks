@@ -1,10 +1,10 @@
 /* ------------------------------ TASK 6 -----------------------------------
-Turimas "users" masyvas. 
+Turimas "users" masyvas.
 
 Parašykite funckijas, kurios atliks nurodytas užduotis:
-1. funkcija "getUserAverageAge" - kaip argumentą priims masyvą ir duoto masyvo 
+1. funkcija "getUserAverageAge" - kaip argumentą priims masyvą ir duoto masyvo
 atveju grąžins visų "users" amžiaus vidurkį kaip skaičių.
-2. funkcija "getUsersNames" -  kaip argumentą priims masyvą ir duoto masyvo 
+2. funkcija "getUsersNames" -  kaip argumentą priims masyvą ir duoto masyvo
 atveju grąžins visų "users" vardus naujame masyve pvz., ['John Smith', 'Ann Smith'..].
 -------------------------------------------------------------------------- */
 
@@ -19,3 +19,14 @@ const users = [
   { id: '8', name: 'Simon Peterson', age: 30 },
   { id: '9', name: 'Daniel Cane', age: 51 },
 ];
+
+const getUserAverageAge = (users) => {
+  return users.map(user => user.age).reduce((a, v) => (a + v)) / users.length;
+}
+
+const getUsersNames = (users) => {
+  return users.map(user => user.name);
+}
+
+console.log(getUserAverageAge(users));
+console.log(getUsersNames(users));
