@@ -20,7 +20,10 @@ function convert() {
     const lbs = Math.round(kg * 2.2046 * 100) / 100; //Round to two decimal places
     const g = kg / 0.0010000
     const oz = Math.round(kg * 35.274 * 100) / 100;
-    return '<p>' + kg + 'kg </p>' + '<p>' + lbs + ' lb </p > ' + '<p>' + g + ' g </p > ' + '<p>' + oz + ' oz</p > ';
+    const text = document.createElement("p")
+    var li = document.createElement("li");
+    text.textContent = lbs + 'kg' + lbs + ' lb';
+    return text;
 }
 
 function clickCall(event) {
@@ -29,6 +32,8 @@ function clickCall(event) {
     output.classList.add("headline");
     const a = document.getElementById("search").value;
     output.textContent = a;
-    output.innerHTML = convert();
+    x = convert();
+    output.append(x)
+
 
 }
